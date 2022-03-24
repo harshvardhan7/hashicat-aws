@@ -118,7 +118,7 @@ resource "aws_eip_association" "hashicat" {
   allocation_id = aws_eip.hashicat.id
 }
 
-resource "aws_instance" "hashicat" {
+resource "aws_instance" "devops" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.hashicat.key_name
@@ -127,7 +127,7 @@ resource "aws_instance" "hashicat" {
   vpc_security_group_ids      = [aws_security_group.hashicat.id]
 
   tags = {
-    Name = "${var.prefix}-hashicat-instance"
+    Name = "${var.prefix}-department-instance"
   }
 }
 
